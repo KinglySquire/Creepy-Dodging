@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvjsei350o31r"]
+
+[ext_resource type="Texture2D" uid="uid://dqwwl417x0fx0" path="res://art/playerGrey_up1.png" id="1_h4tfh"]
+[ext_resource type="Texture2D" uid="uid://6y2pgwlhysro" path="res://art/playerGrey_up2.png" id="2_crn3k"]
+[ext_resource type="Texture2D" uid="uid://coyu7yexvutgw" path="res://art/playerGrey_walk1.png" id="3_40asf"]
+[ext_resource type="Texture2D" uid="uid://dlptpsnmmkyh" path="res://art/playerGrey_walk2.png" id="4_suuhj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_negxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h4tfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_crn3k")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_40asf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_suuhj")
+}],
+"loop": true,
+"name": &"walkin\'",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ule8r"]
+
+[node name="PlayerofGame" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_negxb")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.66965, 2.34734)
+shape = SubResource("CapsuleShape2D_ule8r")
