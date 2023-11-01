@@ -35,14 +35,12 @@ animations = [{
 
 [node name="PlayerofGame" type="Area2D"]
 script = ExtResource("1_mdned")
-speed = null
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_negxb")
-animation = &"walkin\'"
-frame_progress = 0.981715
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.66965, 2.34734)
