@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5cpp7l36u1m3"]
+
+[ext_resource type="Texture2D" uid="uid://8g4kutt2yaso" path="res://art/enemyFlyingAlt_1.png" id="1_p5uag"]
+[ext_resource type="Script" path="res://mob.gd" id="1_uc5hl"]
+[ext_resource type="Texture2D" uid="uid://ckdbhw2e5bfyr" path="res://art/enemyFlyingAlt_2.png" id="2_qnr0p"]
+[ext_resource type="Texture2D" uid="uid://bcsalu2c0docf" path="res://art/enemySwimming_1.png" id="3_ug3us"]
+[ext_resource type="Texture2D" uid="uid://bim8wry6vqkt6" path="res://art/enemySwimming_2.png" id="4_i41ci"]
+[ext_resource type="Texture2D" uid="uid://doxw6rqfhg34i" path="res://art/enemyWalking_1.png" id="5_i1g6e"]
+[ext_resource type="Texture2D" uid="uid://cofhcdpkuxfub" path="res://art/enemyWalking_2.png" id="6_xris7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wocar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p5uag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qnr0p")
+}],
+"loop": true,
+"name": &"flyHigh",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ug3us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i41ci")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i1g6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xris7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sfpoa"]
+radius = 34.0
+height = 98.0
+
+[node name="mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_uc5hl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_wocar")
+animation = &"flyHigh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sfpoa")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(42, -4)
