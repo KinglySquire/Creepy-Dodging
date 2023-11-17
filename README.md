@@ -1,13 +1,19 @@
 # Dodge the Creeps (or Creepy Dodging!)
 
-##This game follows "Your first 2D game" tutorial:
-##https://docs.godotengine.org/en/latest/getting_started/first_2d_game/index.html
+This game follows "Your first 2D game" tutorial:
+https://docs.godotengine.org/en/latest/getting_started/first_2d_game/index.html
+
 
 the game is about multiple creeps
 
-(yuck)
+(yuck!)
+
+(learn how to and then put picture here later)
+
 
 trying to get you!!!11!!
+
+
 
 you gotta use the state of the art controls
 ------------------------------------------------
@@ -15,6 +21,8 @@ W- up
 A- left
 S- down
 d- right
+x- (not bound)
+
 
 or the arrow keys i guess.
 
